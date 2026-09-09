@@ -1,0 +1,4 @@
+En Python podés... crear variables, funciones y clases.
+En Python podés... importar modulos y librerias de otros desarroladores.
+En Python podés... leer, crear y modificar achivos como este.
+En Python podés... perder toda la vida social que aún te quedaba.
