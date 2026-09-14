@@ -82,4 +82,8 @@ if __name__ == "__main__":
     pq.show()
 
     print(pq.peek())
+
+    while not pq.isEmpty():
+        pq.dequeue()
+        pq.show()
     
