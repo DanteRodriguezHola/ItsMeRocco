@@ -1,0 +1,28 @@
+html {
+    padding: 6px;
+    background-color: aquamarine;
+}
+
+strong {
+    color: brown;
+    font-size: 1,2em;
+    
+}
+.columna-normal {
+    border: 12px, orange, double;
+    background-color: blanchedalmond;
+}
+
+.columna-anormal {
+    border: 6px, powderblue, dotted;
+    background-color: aqua;
+}
+
+.columna-extranormal {
+    border: 24px, royalblue, outset;
+    background-color: violet;
+}
+
+.fondo-fondito {
+    background-color: aquamarine;
+}

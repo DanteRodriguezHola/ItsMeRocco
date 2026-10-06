@@ -1,0 +1,19 @@
+html {
+    padding: 6px;
+    background-color: aquamarine;
+}
+
+strong {
+    color: brown;
+    font-size: 1,2em;
+    
+}
+.columna-normal {
+    border: 12px, orange, double;
+    background-color: blanchedalmond;
+}
+
+.columna-anormal {
+    border: 6px, powderblue, dotted;
+    background-color: aqua;
+}
