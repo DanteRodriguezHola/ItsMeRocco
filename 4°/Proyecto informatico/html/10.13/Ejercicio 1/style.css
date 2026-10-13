@@ -1,0 +1,20 @@
+body {
+    color: white;
+    text-shadow: 1px 1px #000000;
+}
+
+#blue {
+    background-color: #423fec;
+}
+
+#green {
+    background-color: #90e458;
+}
+
+#yellow {
+    background-color: #fcff5aff;
+}
+
+#orange {
+    background-color: #ffaa3c;
+}
