@@ -1,0 +1,49 @@
+body {
+    color: #ffffff
+}
+
+h1, h2 {
+    margin: 40px;
+
+    color: #000000;
+}
+
+.bloque-chico {
+    height: 120px;
+
+    padding: 10px;
+}
+
+.bloque-mediano {
+    height: 180px;
+
+    padding: 10px;
+}
+
+.bloque-grande {
+    height: 240px;
+
+    padding: 10px;
+}
+
+.fondo-rojo {
+    background-color: #f32e2e;
+}
+
+.fondo-azul {
+    background-color: #556fff;
+}
+
+.fondo-verde {
+    background-color: #3c9700;
+}
+
+.fondo-amarillo {
+    background-color: #fffb12;
+
+    color: #000000;
+}
+
+.fondo-morado {
+    background-color: #a51ef3;
+}

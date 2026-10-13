@@ -3,25 +3,27 @@ body {
 }
 
 h1, h2 {
+    margin: 40px;
+
     color: #000000;
 }
 
 .bloque-chico {
     height: 120px;
 
-    padding: 12px;
+    padding: 10px;
 }
 
 .bloque-mediano {
     height: 180px;
 
-    padding: 12px;
+    padding: 10px;
 }
 
 .bloque-grande {
     height: 240px;
 
-    padding: 12px;
+    padding: 10px;
 }
 
 .fondo-rojo {
