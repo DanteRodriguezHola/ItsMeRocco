@@ -1,0 +1,86 @@
+{% extends '_Blog/base.html'%}
+
+{% block title %}
+
+    Botolog
+
+{% endblock %}
+
+{% block navegation %}
+
+    <ul>
+
+        <li>
+
+            <a href = '{% url "portfolio:index" %}'
+            target = '_self'>
+
+                <strong> Home </strong>
+
+            </a>
+
+        </li>
+
+        {% for post in posts %}
+
+        <li>
+
+            <a href = '{% url "detail" post.slug %}'
+            target = '_self'>
+
+                {{ post.shortened_heading }}
+
+            </a>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}
+
+{% block content %}
+   
+    <main>
+
+        {% for post in posts %}
+
+        <article>
+
+            <header>
+
+                <h2 class = 'highlight-text heading'>
+                    
+                    {{ post.shortened_heading }}
+                
+                </h2>
+
+                <p class = 'overshadow-text date'>
+                    
+                    [{{ post.date }}]
+                
+                </p>
+
+            </header>
+
+            <p class = 'overshadow drophead'>
+
+                {{ post.drophead}} 
+            
+            </p>
+
+            <a href = '{% url "detail" post.slug %}'
+            target = '_self'> 
+                
+                Leer más 
+
+            </a>
+
+        </article>
+
+        {% endfor %}
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang = "es">
+
+    <head>
+
+        <title>
+
+        {% block title %}
+
+        {% endblock %}
+
+        </title>
+
+        <meta charset = "utf-8">
+
+        <link rel = 'stylesheet' href = "{% static 'style.css' %}">
+
+    </head>
+        
+    <body>
+
+        <nav class = 'basket navegation'>
+
+            {% block navegation %}
+
+            {% endblock %}
+
+        </nav>
+
+        <div class = 'basket posts'>
+
+            {% block content %}
+
+            {% endblock %}
+
+        </div>
+
+    </body>
+
+</html>

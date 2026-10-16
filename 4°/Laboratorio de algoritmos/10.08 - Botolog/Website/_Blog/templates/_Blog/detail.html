@@ -1,0 +1,108 @@
+{% extends '_Blog/base.html'%}
+
+{% block title %}
+
+    {{ post.shortened_heading }}
+
+{% endblock %}
+
+{% block content %}
+
+    <header>
+
+        <h1 class = 'highlight-text heading'> 
+
+            {{ post.heading }}
+
+        </h1>
+
+        <p class = 'overshadow-text date'>
+            
+            [{{ post.date }}]
+        
+        </p>
+        
+    </header>
+
+    <summary>
+
+        <p class = 'overshadow-text drophead'>
+            
+            {{ post.drophead }}
+        
+        </p>
+
+    </summary>
+
+    <main>
+
+        <p class = 'highlight-text'>
+            
+            {{ post.content }}
+        
+        </p>
+
+    </main>
+
+    <aside class = 'basket comments'>
+
+        <h2 class = 'highlight-text heading'>
+
+            Comentarios
+
+        </h2>
+
+        <form method = 'post'
+        Waction = '.'>
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button>
+
+                Enviar
+
+            </button>
+
+        </form>
+
+        {% for comment in post.comments.all %}
+
+        <div>
+
+            <p class = 'highlight-text username'>
+                
+                <strong> {{ comment.user }}: </strong>
+
+            </p>
+            
+            <p class = 'overshadow-text date'>
+
+                [{{ comment.date }}]
+
+            </p>
+
+            <p class = 'highlight-text'>
+
+                {{ comment.content }}
+
+            </p>
+        
+        </div>
+        
+        {% endfor %}
+
+    </aside>
+
+    <footer>
+
+        <a href = '{% url "index" %}'>
+            
+            Volver a inicio 
+        
+        </a>
+
+    </footer>
+
+{% endblock %}
