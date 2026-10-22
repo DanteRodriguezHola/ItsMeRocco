@@ -20,4 +20,5 @@ WHERE
             productos AS productos2
 
         WHERE
-            productos2.id_categoria = productos1.id_categoria)
+            productos2.id_categoria = productos1.id_categoria
+        );
