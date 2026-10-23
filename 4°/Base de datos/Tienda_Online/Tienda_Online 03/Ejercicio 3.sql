@@ -1,13 +1,16 @@
 USE tienda_online;
 
 SELECT
-	*
+	productos1.id_producto AS 'ID',
+    productos1.nombre AS 'Producto',
+    ventas1.TotalVendido AS 'TotalVendido'
     
 FROM
-	(
+	productos AS productos1
+    
+    JOIN (
     SELECT
-		productos2.id_producto AS 'ID',
-		productos2.nombre AS 'Nombre',
+		detalles2.id_producto AS 'id_producto',
 		SUM(detalles2.cantidad) AS 'TotalVendido'
 
 	FROM
@@ -17,24 +20,18 @@ FROM
 			pedidos2.id_pedido = detalles2.id_pedido AND
 			pedidos2.estado != 'cancelado'
 
-		JOIN productos AS productos2 ON
-			productos2.id_producto = detalles2.id_producto
-
 	GROUP BY
-		ID,
-		Nombre
-	) AS UnidadesVendidas1
+		id_producto) AS ventas1 ON 
+        ventas1.id_producto = productos1.id_producto
     
 WHERE
-	UnidadesVendidas1.TotalVendido = (
+	TotalVendido = (
 		SELECT
 			MAX(TotalVendido)
             
-		FROM
-			(
+		FROM (
 			SELECT
-				productos2.id_producto AS 'ID',
-				productos2.nombre AS 'Nombre',
+				detalles2.id_producto AS 'id_vendido',
 				SUM(detalles2.cantidad) AS 'TotalVendido'
 
 			FROM
@@ -44,11 +41,6 @@ WHERE
 					pedidos2.id_pedido = detalles2.id_pedido AND
 					pedidos2.estado != 'cancelado'
 
-				JOIN productos AS productos2 ON
-					productos2.id_producto = detalles2.id_producto
-
 			GROUP BY
-				ID,
-				Nombre
-			) AS UnidadesVendidas2
-		)
+				id_vendido) AS UnidadesVendidas2
+			)
